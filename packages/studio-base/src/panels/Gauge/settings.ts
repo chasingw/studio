@@ -85,6 +85,7 @@ export function useSettingsTree(
               { label: "Red to green", value: "red-yellow-green" },
               { label: "Rainbow", value: "rainbow" },
               { label: "Turbo", value: "turbo" },
+              { label: "Bluegold", value: "bluegold" },
             ],
           },
         }),

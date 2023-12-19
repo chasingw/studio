@@ -71,6 +71,7 @@ const COLOR_MAP_TO_GLSL: {
 } = {
   COLOR_MAP_TURBO: 0,
   COLOR_MAP_RAINBOW: 1,
+  COLOR_MAP_BLUEGOLD: 2,
 };
 
 const DEFAULT_SETTINGS: LayerSettingsFoxgloveGrid = {
@@ -847,6 +848,8 @@ function createMaterial(texture: THREE.DataTexture, topic: string): GridShaderMa
             if(colorMap == COLOR_MAP_TURBO) {
               gl_FragColor = vec4(turboLinear(normalizedColorValue), colorMapOpacity);
             } else if(colorMap == COLOR_MAP_RAINBOW) {
+              gl_FragColor = vec4(rainbowLinear(normalizedColorValue), colorMapOpacity);
+            } else if(colorMap == COLOR_MAP_BLUEGOLD) {
               gl_FragColor = vec4(rainbowLinear(normalizedColorValue), colorMapOpacity);
             }
           }
