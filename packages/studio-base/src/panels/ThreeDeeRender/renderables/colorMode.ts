@@ -104,7 +104,8 @@ function getColorBgra(output: ColorRGBA, colorValue: number): void {
 
 function bluegoldLookup(output: ColorRGBA, pct: number): void {
   // map intensity from 0~255 -> bluegold rgb map
-  const blueGoldColormapData = [[0,126,174],
+  const blueGoldColormapData = [
+    [0,126,174],
     [4,129,177],
     [8,132,180],
     [12,135,184],
@@ -362,9 +363,9 @@ function bluegoldLookup(output: ColorRGBA, pct: number): void {
     [250,30,0]];
   // pct = Math.max(0, Math.min(255, pct*255));
   if (blueGoldColormapData[pct] != undefined) {
-    output.r = blueGoldColormapData[pct]![0]!;
-    output.g = blueGoldColormapData[pct]![1]!;
-    output.b = blueGoldColormapData[pct]![2]!;
+    output.r = blueGoldColormapData[pct]![0]!/255.0;
+    output.g = blueGoldColormapData[pct]![1]!/255.0;
+    output.b = blueGoldColormapData[pct]![2]!/255.0;
     output.a = 1;
   }
 }
